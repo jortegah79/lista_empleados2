@@ -1,0 +1,42 @@
+<div id="app" class="container-fluid ">
+  <div class="row bg-secondary text-light">
+    <div class="col">
+      <h1 class="text-center display-4 ">{{title}}</h1>
+    </div>
+  </div>
+  <div class="container" >
+    <div class="container">
+      <div class="row mt-5 ">
+        <div class=" col-6 ">
+          <app-input-data [empleado]="empleado" (guardar)="onGuardar(empleado)"></app-input-data>
+        </div>
+        <div class="col-6">
+          <h2 class="text-center">Lista empleados</h2>
+          <table class="m-auto">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Sueldo</th>
+                <th>Cargo</th>
+                <th>edit</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let emp of lista_empleados; let i=index;">
+                <td>{{emp.nombre}}</td>
+                <td>{{emp.apellido}}</td>
+                <td>{{emp.sueldo}}</td>
+                <td>{{emp.cargo}}</td>
+                <td><button class="btn btn-success" (click)="edit_empleado(i)">EDIT</button></td>
+                <td><button class="btn btn-danger" (click)="delete_empleado(i)">DELETE</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

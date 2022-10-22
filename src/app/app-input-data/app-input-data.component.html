@@ -1,0 +1,30 @@
+<form>
+    <h2>Introduce datos</h2>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <td><input type="text" name="txt_nombre" id="txt_nombre" [(ngModel)]="empleado.nombre"></td>
+        </tr>
+        <tr>
+            <th>Apellido</th>
+            <td><input type="text" name="txt_apellido" id="txt_apellido" [(ngModel)]="empleado.apellido">
+            </td>
+        </tr>
+        <tr>
+            <th>Sueldo</th>
+            <td>
+                <input type="number" name="txt_sueldo" id="txt_sueldo" [(ngModel)]="empleado.sueldo">
+            </td>
+        </tr>
+        <tr>
+            <th>Cargo</th>
+            <td><input type="text" name="txt_cargo" id="txt_cargo" [(ngModel)]="empleado.cargo"></td>
+        </tr>
+        <tr mt-2>
+            <td></td>
+            <td><button (click)="guardar_empleado()" class="btn btn-primary">Nuevo</button>
+
+            </td>
+        </tr>
+    </table>
+</form>
