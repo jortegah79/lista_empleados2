@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppInputDataComponent } from './app-input-data/app-input-data.component';
+import { MessageServiceService } from './message-service.service';
+import { GestionEmpleadosService } from './gestion-empleados.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { AppInputDataComponent } from './app-input-data/app-input-data.component
   imports: [
     BrowserModule,FormsModule
   ],
-  providers: [],
+  providers: [MessageServiceService,GestionEmpleadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
