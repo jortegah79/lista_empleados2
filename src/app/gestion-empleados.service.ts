@@ -38,10 +38,14 @@ export class GestionEmpleadosService {
   guardar_empleado(indice: number, empleado: Empleado) {
     if (indice == -1) {
       this.mensaje.muestra_mensaje(`El nuevo el nuevo empleado es ${empleado.nombre} ${empleado.apellido}.`);
+    this.lista_empleados.push(empleado);
     } else {
       this.mensaje.muestra_mensaje(`El empleado es ${empleado.nombre} ${empleado.apellido} ha sido actualizado.`);
-    }
-    console.log(this.lista_empleados);
+      this.lista_empleados[indice].nombre=empleado.nombre;
+      this.lista_empleados[indice].apellido=empleado.apellido;
+      this.lista_empleados[indice].sueldo=empleado.sueldo;
+      this.lista_empleados[indice].cargo=empleado.cargo;
+    }    
     empleado = new Empleado("", "", 0, "");
   }
 }
